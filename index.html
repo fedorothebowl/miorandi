@@ -10,19 +10,19 @@
     <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js'></script>
 </head>
 <body>
-<a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
+    <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
 
-    <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
-   
-    <a-entity position="0 600 0">
-        <a-image
-                gps-new-entity-place="latitude: 44.0776781; longitude: 10.1043886"
-                scale="300 300 300" rotation="45 0 0"
-                src="https://artivism.today/wp-content/uploads/2024/01/2-2.png"
-                maxDistance="2"
+        <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
+    
+        <a-entity position="0 600 0">
+            <a-image
+                    gps-new-entity-place="latitude: 44.0776781; longitude: 10.1043886"
+                    scale="300 300 300" rotation="45 0 0"
+                    src="/assets/img/2.png"
+                    maxDistance="2"
 
-        ></a-image>            
-    </a-entity>
-</a-scene>
+            ></a-image>
+        </a-entity>
+    </a-scene>
 </body>
 </html>
