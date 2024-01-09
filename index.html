@@ -14,7 +14,7 @@
 
     <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
 
-        <!-- <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera> -->
+        <a-camera gps-new-camera='gpsMinDistance: 5' camera></a-camera>
     
         <!--  Accademia -->
         <!--  <a-entity position="0 800 0">
@@ -45,7 +45,7 @@
                     maxDistance="2"
             ></a-image>
         </a-entity>
-        <a-entity id="player" camera></a-entity>
+        {# <a-entity id="player" ></a-entity> #}
 
     </a-scene>
     <script>
