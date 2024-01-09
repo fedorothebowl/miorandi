@@ -11,11 +11,12 @@
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script> 
 </head>
 <body>
+
     <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
 
-        <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
+        <a-camera gps-new-camera='gpsMinDistance: 5' camera></a-camera>
     
-        {# Accademia #}
+        <!--  Accademia -->
         {# <a-entity position="0 800 0">
             <a-image
                     gps-new-entity-place="latitude: 44.0776781; longitude: 10.1043886"
@@ -35,10 +36,10 @@
             ></a-image>
         </a-entity> #}
 
-        {# Casa #}
-        <a-entity position="0 500 0">
+        <!-- Casa -->
+        <a-entity position="0 500 0" look-at="[camera]">
 
-            <a-image look-at="[camera]"
+            <a-image 
                     gps-new-entity-place="latitude: 43.86634451161; longitude: 10.272073753967"
                     scale="300 300 300" rotation="45 0 0"
                     src="/assets/img/2.png"
@@ -50,5 +51,8 @@
 
 
     </a-scene>
+    <script>
+
+    </script>
 </body>
 </html>
