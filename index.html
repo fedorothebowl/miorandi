@@ -38,24 +38,7 @@
 
         <!-- Casa -->
 
-        <script>
-            AFRAME.registerComponent('follow-gps-camera', {
-                tick: function () {
-                    var cameraPosition = this.el.sceneEl.camera.el.getAttribute('position');
-                    var housePosition = this.el.getAttribute('position');
-        
-                    // Calcola l'angolo tra la casa e la posizione della camera
-                    var rotationY = Math.atan2(cameraPosition.x - housePosition.x, cameraPosition.z - housePosition.z);
-        
-                    // Normalizza l'angolo nel range desiderato (-180 a 180 gradi)
-                    rotationY = (rotationY * (180 / Math.PI) + 360) % 360 - 180;
-        
-                    document.querySelectorAll("a-image").forEach(el=>{
-                        el.setAttribute('rotation', '45' + rotationY + ' 0');
-                    })
-                }
-            });
-        </script>
+
         
         <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
 
@@ -65,20 +48,22 @@
             <a-entity id="player" look-at="[gps-camera]"></a-entity>
         
             <!-- House Entity -->
-            <a-entity position="0 800 0" look-at="[gps-camera]" follow-gps-camera>
+            <a-entity position="0 800 0" look-at="[gps-camera]">
                 <a-image 
                     gps-new-entity-place="latitude: 43.86634451161; longitude: 10.272073753967"
                     scale="200 200 200" 
                     src="/assets/img/fedoro_1.png"
                     maxDistance="2"
+                    rotation="45 0 0"
                 ></a-image>
             </a-entity>
-           <a-entity position="0 800 0" look-at="[gps-camera]" follow-gps-camera>
+           <a-entity position="0 800 0" look-at="[gps-camera]">
                 <a-image 
                     gps-new-entity-place="latitude: 43.866769; longitude: 10.27215"
                     scale="200 200 200" 
                     src="/assets/img/fedoro_2.png"
                     maxDistance="2"
+                    rotation="45 0 0"
                 ></a-image>
             </a-entity>
             
