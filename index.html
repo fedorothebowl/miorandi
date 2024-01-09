@@ -50,7 +50,7 @@
                     // Normalizza l'angolo nel range desiderato (-180 a 180 gradi)
                     rotationY = (rotationY * (180 / Math.PI) + 360) % 360 - 180;
         
-                    document.querySelectorAll("a-entity").forEach(el=>{
+                    document.querySelectorAll("a-image").forEach(el=>{
                         el.setAttribute('rotation', '45' + rotationY + ' 0');
                     })
                 }
