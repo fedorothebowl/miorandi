@@ -37,6 +37,18 @@
         </a-entity> --> 
 
         <!-- Casa -->
+        <script>
+            AFRAME.registerComponent('follow-gps-camera', {
+                tick: function () {
+                    var cameraPosition = this.el.sceneEl.camera.el.getAttribute('position');
+                    var housePosition = this.el.getAttribute('position');
+
+                    var rotationY = Math.atan2(cameraPosition.x - housePosition.x, cameraPosition.z - housePosition.z);
+                    rotationY = rotationY * (180 / Math.PI);
+                    document.getElementById("image").setAttribute('rotation', '45' + rotationY + ' 0');
+                }
+            });
+        </script>
         <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
 
             <a-camera gps-new-camera='gpsMinDistance: 5'></a-camera>
@@ -65,19 +77,7 @@
                 ></a-image>
             </a-entity> -->
             
-            <script>
-                AFRAME.registerComponent('follow-gps-camera', {
-                    tick: function () {
-                        var cameraPosition = this.el.sceneEl.camera.el.getAttribute('position');
-                        var housePosition = this.el.getAttribute('position');
 
-                        var rotationY = Math.atan2(cameraPosition.x - housePosition.x, cameraPosition.z - housePosition.z);
-                        rotationY = rotationY * (180 / Math.PI);
-
-                        document.getElementById("image").setAttribute('rotation', '45' + rotationY + ' 0');
-                    }
-                });
-            </script>
         <!-- </a-scene>  --> 
         {# <a-entity id="player" ></a-entity> #}
 
