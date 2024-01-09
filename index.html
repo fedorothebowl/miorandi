@@ -12,9 +12,9 @@
 </head>
 <body>
 
-    <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
+   <!--  <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
 
-        <a-camera gps-new-camera='gpsMinDistance: 5' camera></a-camera>
+        <a-camera gps-new-camera='gpsMinDistance: 5' camera></a-camera>-->
     
         <!--  Accademia -->
         <!--  <a-entity position="0 800 0">
@@ -37,17 +37,29 @@
         </a-entity> --> 
 
         <!-- Casa -->
-        <a-entity position="0 500 0" >
-            <a-image 
+        <a-scene vr-mode-ui='enabled: false' arjs='sourceType: webcam; videoTexture: true; debugUIEnabled: false' renderer='antialias: true; alpha: true'>
+
+            <a-camera gps-new-camera='gpsMinDistance: 5' camera></a-camera>
+        
+            <!-- Player Entity -->
+            <a-entity id="player" look-at="[gps-camera]">
+                <!-- Add any components or child entities for the player -->
+            </a-entity>
+        
+            <!-- House Entity -->
+            <a-entity position="0 500 0" look-at="[gps-camera]">
+                <a-image 
                     gps-new-entity-place="latitude: 43.86634451161; longitude: 10.272073753967"
                     scale="300 300 300" rotation="45 0 0"
                     src="/assets/img/2.png"
                     maxDistance="2"
-            ></a-image>
-        </a-entity>
+                ></a-image>
+            </a-entity>
+        
+        <!-- </a-scene>       --> 
         {# <a-entity id="player" ></a-entity> #}
 
-    </a-scene>
+     </a-scene>
     <script>
 
     </script>
